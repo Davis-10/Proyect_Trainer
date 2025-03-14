@@ -35,13 +35,13 @@
         <div class="grid">
             <div class="item item1">
                 <div class="item-bg">
-                    <img src="./assets/training-bg.jpg" alt="Entrenamiento Personal">
+                    <img src="./assets/item1.jpeg" alt="Entrenamiento Personal">
                 </div>
                 <div class="item-content">
                     <i class="fas fa-dumbbell"></i>
                     <h2>Programas de Transformación Física</h2>
                     <p>Entrenamiento personalizado para alcanzar tus objetivos de forma efectiva y sostenible.</p>
-                    <a href="#" class="item-link">Conocer más →</a>
+                    <a href="#plans" class="item-link">Conocer más →</a>
                 </div>
             </div>
 
@@ -103,8 +103,79 @@
 
     </main>
 
-    <footer>
+    <section id="plans" class="plans-section">
+        <div class="plans-container">
+            <h2>Planes de Transformación</h2>
+            <div class="plans-grid">
+                <div class="plan-card">
+                    <h3>Plan Basic</h3>
+                    <p>Acceso a programa de entrenamiento personalizado durante 1 mes, información nutricional básica, descarga en PDF del plan de entrenamiento y derecho a 1 videollamada de análisis y seguimiento.</p>
+                    <a href="#" class="plan-link">Acceder al Plan</a>
+                </div>
+                <div class="plan-card">
+                    <h3>Plan GoUp</h3>
+                    <p>Acceso a programa de entrenamiento personalizado durante 3 meses, información nutricional, asesoría de uso de suplementos y plan de alimentación adecuado a las necesidades y 2 videollamadas de análisis y seguimiento por cada mes.</p>
+                    <a href="#" class="plan-link">Acceder al Plan</a>
+                </div>
+                <div class="plan-card">
+                    <h3>Plan Expert</h3>
+                    <p>Acceso a programa de entrenamiento personalizado durante 6 meses, información y asesoría nutricional y de suplementos más el plan de alimentación adecuado a las necesidades y 3 videollamadas de análisis y seguimiento por cada mes.</p>
+                    <a href="#" class="plan-link">Acceder al Plan</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
+
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <h2>Contáctame</h2>
+            <p>¿Tienes dudas o quieres más información? Llena el formulario y me pondré en contacto contigo lo antes posible.</p>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Enviar Mensaje</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+
+            <div class="footer-content">
+
+                <h2>DavisTrainer</h2>
+                <nav class="footer-links">
+                    <a href="#">Servicios</a>
+                    <a href="#">Acerca de</a>
+                    <a href="#">Contacto</a>
+                    <a href="#" class="btn-outline">Reservar</a>
+                </nav>
+            </div>
+
+            <div class="footer-social">
+                <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.github.com" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 DavisTrainer. Todos los derechos reservados.</p>
+            </div>
+
+        </div>
     </footer>
+
+    <script src="./script.js" ></script>
 </body>
 </html>
