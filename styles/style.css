@@ -623,3 +623,167 @@ footer {
         font-size: 2rem;
     }
 }
+
+
+
+/* ************  Styles Vista Planes  ************ */
+
+
+/* Estilos específicos para el nav en planes.html */
+.nav-container--plans {
+    background: var(--color-secondary); /* Mismo color que el footer */
+    color: var(--color-light);
+    position: relative;
+    padding: 3rem;
+}
+
+.nav-container--plans .nav-links a {
+    color: var(--color-light);
+    text-shadow: none;
+}
+
+.nav-container--plans .nav-links a:hover {
+    opacity: 0.8;
+}
+
+.nav-container--plans .btn-outline {
+    border-color: var(--color-light);
+    color: var(--color-light);
+}
+
+.nav-container--plans .btn-outline:hover {
+    background: var(--color-light);
+    color: var(--color-secondary);
+}
+
+
+/* Estilos generales para la sección de detalles de los planes */
+.plans-details-section {
+    background: var(--color-bg);
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+.plans-details-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.plans-details-container h1 {
+    font-family: var(--font-title);
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.plans-details-container p {
+    font-family: var(--font-text);
+    font-size: 1rem;
+    color: var(--color-text);
+    margin-bottom: 2rem;
+}
+
+/* Estilos para cada plan */
+.plan-detail {
+    background: var(--color-light);
+    border: 1px solid var(--color-secondary);
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.plan-detail h2 {
+    font-family: var(--font-title);
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.plan-detail p {
+    font-family: var(--font-text);
+    font-size: 1rem;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.plan-detail h3 {
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+    color: var(--color-accent);
+    margin-bottom: 2rem;
+}
+
+.btn-buy {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    background: var(--color-primary);
+    color: var(--color-light);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-buy:hover {
+    background: var(--color-accent);
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    .plans-details-container h1 {
+        font-size: 2rem;
+    }
+
+    .plan-detail {
+        padding: 1.5rem;
+    }
+
+    .plan-detail h2 {
+        font-size: 1.75rem;
+    }
+
+    .plan-detail p {
+        font-size: 0.95rem;
+    }
+
+    .plan-detail h3 {
+        font-size: 1.25rem;
+    }
+
+    .btn-buy {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+/* Responsividad para pantallas muy pequeñas (teléfonos) */
+@media (max-width: 480px) {
+    .plans-details-container {
+        padding: 0.5rem;
+    }
+
+    .plan-detail {
+        padding: 1rem;
+    }
+
+    .plan-detail h2 {
+        font-size: 1.5rem;
+    }
+
+    .plan-detail p {
+        font-size: 0.9rem;
+    }
+
+    .plan-detail h3 {
+        font-size: 1.1rem;
+    }
+
+    .btn-buy {
+        font-size: 0.85rem;
+        padding: 0.5rem 0.75rem;
+    }
+}
