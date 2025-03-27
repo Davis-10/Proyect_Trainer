@@ -183,14 +183,19 @@ h2 {
 }
 
     -----------  /* Grid */  -----
+
+.prueba {
+    background-color: var(--color-bg);
+}
 main {
     width: 100%;
     min-height: 100vh;
     background: var(--color-bg);
-    padding: 2rem 0;
+    /* padding: 2rem 0; */
 }
     
 .grid {
+    background: var(--color-bg);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
