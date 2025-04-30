@@ -18,4 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
         document.querySelector('#plans').scrollIntoView({ behavior: 'smooth' });
     });
+
 });
+
+    
