@@ -23,6 +23,14 @@
 
 
 # Paleta de colores
+/* Color Theme Swatches in Hex */
+.Carabins-Training-Camp-1-hex { color: #0E5673; }
+.Carabins-Training-Camp-2-hex { color: #BDE3F2; }
+.Carabins-Training-Camp-3-hex { color: #148BA6; }
+.Carabins-Training-Camp-4-hex { color: #F2E394; }
+.Carabins-Training-Camp-5-hex { color: #8C4130; }
+
+
 
 
 # Objetivos

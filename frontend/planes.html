@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,41 +17,41 @@
                 <a href="index.html">Inicio</a>
                 <a href="#plans">Planes</a>
                 <a href="#contact">Contacto</a>
-                <a href="#" class="btn-outline">Reservar</a>
+                <a href="auth/login.html" class="btn-login">Iniciar Sesión</a>
             </nav>
         </div>
     </header>
 
     <main>
         <section id="plans-details" class="plans-details-section">
-    <div class="plans-details-container">
-        <h1>Planes de Transformación</h1>
-        <p>Elige el plan que mejor se adapte a tus objetivos y comienza tu transformación hoy mismo.</p>
+            <div class="plans-details-container">
+                <h1>Planes de Transformación</h1>
+                <p>Elige el plan que mejor se adapte a tus objetivos y comienza tu transformación hoy mismo.</p>
 
-        <div class="plans-grid">
-            <div class="plan-detail">
-                <h2>Plan Basic</h2>
-                <p>Acceso a programa de entrenamiento personalizado durante 1 mes, información nutricional básica, descarga en PDF del plan de entrenamiento y derecho a 1 videollamada de análisis y seguimiento.</p>
-                <h3>Precio: <span>Por definir</span></h3>
-                <button class="btn-buy">Adquirir Plan</button>
-            </div>
+                <div class="plans-grid">
+                    <div class="plan-detail">
+                        <h2>Plan Basic</h2>
+                        <p>Acceso a programa de entrenamiento personalizado durante 1 mes, información nutricional básica, descarga en PDF del plan de entrenamiento y derecho a 1 videollamada de análisis y seguimiento.</p>
+                        <h3>Precio: <span>Por definir</span></h3>
+                        <button class="btn-buy" onclick="window.location.href='auth/register.html?plan=basic'">Comenzar Ahora</button>
+                    </div>
 
-            <div class="plan-detail">
-                <h2>Plan GoUp</h2>
-                <p>Acceso a programa de entrenamiento personalizado durante 3 meses, información nutricional, asesoría de uso de suplementos y plan de alimentación adecuado a las necesidades y 2 videollamadas de análisis y seguimiento por cada mes.</p>
-                <h3>Precio: <span>Por definir</span></h3>
-                <button class="btn-buy">Adquirir Plan</button>
-            </div>
+                    <div class="plan-detail">
+                        <h2>Plan GoUp</h2>
+                        <p>Acceso a programa de entrenamiento personalizado durante 3 meses, información nutricional, asesoría de uso de suplementos y plan de alimentación adecuado a las necesidades y 2 videollamadas de análisis y seguimiento por cada mes.</p>
+                        <h3>Precio: <span>Por definir</span></h3>
+                        <button class="btn-buy" onclick="window.location.href='auth/register.html?plan=goup'">Comenzar Ahora</button>
+                    </div>
 
-            <div class="plan-detail">
-                <h2>Plan Expert</h2>
-                <p>Acceso a programa de entrenamiento personalizado durante 6 meses, información y asesoría nutricional y de suplementos más el plan de alimentación adecuado a las necesidades y 3 videollamadas de análisis y seguimiento por cada mes.</p>
-                <h3>Precio: <span>Por definir</span></h3>
-                <button class="btn-buy">Adquirir Plan</button>
+                    <div class="plan-detail">
+                        <h2>Plan Expert</h2>
+                        <p>Acceso a programa de entrenamiento personalizado durante 6 meses, información y asesoría nutricional y de suplementos más el plan de alimentación adecuado a las necesidades y 3 videollamadas de análisis y seguimiento por cada mes.</p>
+                        <h3>Precio: <span>Por definir</span></h3>
+                        <button class="btn-buy" onclick="window.location.href='auth/register.html?plan=expert'">Comenzar Ahora</button>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
     </main>
 
     <footer>
@@ -62,7 +62,7 @@
                     <a href="index.html">Inicio</a>
                     <a href="#plans">Planes</a>
                     <a href="#contact">Contacto</a>
-                    <a href="#" class="btn-outline">Reservar</a>
+                    <a href="auth/login.html">Iniciar Sesión</a>
                 </nav>
             </div>
 
@@ -77,5 +77,20 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Función para manejar la selección de plan
+        function handlePlanSelection(plan) {
+            // Verificar si el usuario está autenticado
+            const token = localStorage.getItem('token');
+            if (token) {
+                // Si está autenticado, redirigir al dashboard o proceso de pago
+                window.location.href = '/dashboard.html';
+            } else {
+                // Si no está autenticado, redirigir al registro con el plan seleccionado
+                window.location.href = `auth/register.html?plan=${plan}`;
+            }
+        }
+    </script>
 </body>
 </html>

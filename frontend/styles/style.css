@@ -1,18 +1,30 @@
 :root {
-    --color-bg: #f5f5f5; /* Fondo principal */
-    --color-primary: #ff4d4d; /* Rojo vibrante, usado en botones */
-    --color-secondary: #464545; /* Gris oscuro para bordes y textos secundarios */
-    --color-accent: #ffa600; /* Amarillo/naranja para destacar elementos */
-    --color-text: #333333; /* Texto principal */
-    --color-light: #ffffff; /* Para fondos claros */
+    /* Variables de color principales */
+    --color-primary: #0E5673;      /* Azul oscuro - Color principal */
+    --color-secondary: #148BA6;    /* Azul turquesa - Color secundario */
+    --color-light: #BDE3F2;        /* Azul claro - Fondos y elementos claros */
+    --color-accent: #F2E394;       /* Amarillo suave - Acentos y CTAs */
+    --color-accent-secondary: #8C4130; /* Marrón rojizo - Acentos secundarios */
+    
+    /* Variables derivadas para uso específico */
+    --color-text-primary: #0E5673;     /* Texto principal */
+    --color-text-secondary: #148BA6;    /* Texto secundario */
+    --color-background: #ffffff;        /* Fondo principal */
+    --color-button-primary: #148BA6;    /* Botones principales */
+    --color-button-hover: #0E5673;      /* Estado hover de botones */
+    --color-nav-background: #0E5673;    /* Fondo de navegación */
+    
+    /* Variables para gradientes */
+    --gradient-primary: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    --gradient-accent: linear-gradient(135deg, var(--color-accent), var(--color-accent-secondary));
     
     /* Variables para el bento grid */
-    --bento-overlay: rgba(0, 0, 0, 0.7);
-    --bento-overlay-hover: rgba(0, 0, 0, 0.8);
-    --bento-text: #ffffff;
-    --bento-text-secondary: rgba(255, 255, 255, 0.8);
-    --bento-accent: #ff6b6b;
-    --bento-accent-hover: #ff5252;
+    --bento-overlay: rgba(14, 86, 115, 0.7);        /* color-primary con transparencia */
+    --bento-overlay-hover: rgba(14, 86, 115, 0.85); /* color-primary más oscuro */
+    --bento-text: #ffffff;                          /* texto sobre fondos oscuros */
+    --bento-text-secondary: rgba(255, 255, 255, 0.9); /* texto secundario sobre fondos oscuros */
+    --bento-accent: var(--color-accent);            /* amarillo suave para acentos */
+    --bento-accent-hover: var(--color-accent-secondary); /* marrón rojizo para hover */
 
     --font-title: 'Oswald', sans-serif;
     --font-subtitle: 'Montserrat', sans-serif;
@@ -35,6 +47,44 @@ button, .hero-button {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* Estilos base */
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+}
+
+/* Estilos para botones principales */
+.btn-primary {
+  background-color: var(--color-button-primary);
+  color: var(--color-light);
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-button-hover);
+}
+
+/* Estilos para la navegación */
+.navbar {
+  background-color: var(--color-nav-background);
+  color: var(--color-light);
+}
+
+/* Estilos para títulos */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-primary);
+}
+
+/* Estilos para links */
+a {
+  color: var(--color-accent);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-accent-secondary);
 }
 
 /* Estilos header */
@@ -130,18 +180,19 @@ h2 {
 .hero-button {
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
-    background: var(--color-primary);
-    color: var(--color-light);
+    background: var(--color-accent);
+    color: var(--color-primary);
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
     text-decoration: none;
     display: inline-block;
+    font-weight: bold;
 }
 
 .hero-button:hover {
-    background: var(--color-accent);
+    background: var(--color-accent-secondary);
     color: var(--color-light);
 }
 
@@ -185,17 +236,17 @@ h2 {
     -----------  /* Grid */  -----
 
 .prueba {
-    background-color: var(--color-bg);
+    background-color: var(--color-background);
 }
 main {
     width: 100%;
     min-height: 100vh;
-    background: var(--color-bg);
+    background: var(--color-background);
     /* padding: 2rem 0; */
 }
     
 .grid {
-    background: var(--color-bg);
+    background: var(--color-background);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
@@ -209,7 +260,7 @@ main {
     border-radius: 1rem;
     overflow: hidden;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(14, 86, 115, 0.15);
 }
 
 .item-bg {
@@ -259,7 +310,7 @@ main {
 
 .item i {
     font-size: 2rem;
-    color: var(--bento-accent);
+    color: var(--color-accent);
     margin-bottom: 0.5rem;
 }
 
@@ -278,7 +329,7 @@ main {
 }
 
 .item-link {
-    color: var(--bento-accent);
+    color: var(--color-accent);
     text-decoration: none;
     font-weight: 600;
     margin-top: auto;
@@ -287,7 +338,7 @@ main {
 }
 
 .item-link:hover {
-    color: var(--bento-accent-hover);
+    color: var(--color-accent-secondary);
 }
 
 /* Grid Layout */
@@ -349,31 +400,30 @@ main {
 
 /* Buttons */
 .btn-reservar, .btn-contact {
-    background: var(--bento-accent);
-    color: var(--bento-text);
+    background: var(--color-accent);
+    color: var(--color-primary);
     border: none;
     padding: 0.8rem 1.5rem;
     border-radius: 0.5rem;
-    font-weight: 600;
+    font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
     margin-top: auto;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    text-shadow: 1px 1px 2px rgba(9, 33, 38, 0.2); /* Usando color-dark */
 }
 
 .btn-reservar:hover, .btn-contact:hover {
-    background: var(--bento-accent-hover);
-    transform: translateY(-2px);
+    background: var(--color-accent-secondary);
+    color: var(--color-light);
 }
 
 .btn-contact {
-    background: var(--bento-text);
-    color: var(--color-bg);
+    background: var(--color-primary);
+    color: var(--color-light);
 }
 
 .btn-contact:hover {
-    background: var(--bento-text-secondary);
-    color: var(--color-bg);
+    background: var(--color-secondary);
 }
 
 /* Responsive Design */
@@ -392,7 +442,7 @@ main {
 /* ************  Section Plans ************ */
 
 .plans-section {
-    background: var(--color-bg);
+    background: var(--color-background);
     padding: 4rem 1rem;
     text-align: center;
 }
@@ -417,9 +467,8 @@ main {
 }
 
 .plan-card {
-    background: var(--color-light);
+    background: var(--color-background);
     border: 1px solid var(--color-secondary);
-    /* border-radius: 10px; */
     padding: 2rem;
     width: 100%;
     max-width: 350px;
@@ -430,6 +479,7 @@ main {
 .plan-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    border-color: var(--color-accent);
 }
 
 .plan-card h3 {
@@ -451,7 +501,7 @@ main {
     display: inline-block;
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
-    background: var(--color-primary);
+    background: var(--color-button-primary);
     color: var(--color-light);
     border: none;
     border-radius: 5px;
@@ -461,7 +511,7 @@ main {
 }
 
 .plan-link:hover {
-    background: var(--color-accent);
+    background: var(--color-button-hover);
 }
 
 @media (max-width: 768px) {
@@ -475,7 +525,7 @@ main {
 /* ************  Contact Form ************ */
 
 .contact-section {
-    background: var(--color-bg);
+    background: var(--color-background);
     padding: 4rem 1rem;
     text-align: center;
 }
@@ -532,13 +582,14 @@ main {
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--color-primary);
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 2px rgba(20, 139, 166, 0.2);
 }
 
 .btn-submit {
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
-    background: var(--color-primary);
+    background: var(--color-button-primary);
     color: var(--color-light);
     border: none;
     border-radius: 5px;
@@ -547,13 +598,13 @@ main {
 }
 
 .btn-submit:hover {
-    background: var(--color-accent);
+    background: var(--color-button-hover);
 }
 
 /* ------------- Footer ---------------*/
 
 footer {
-    background: var(--color-secondary);
+    background: var(--color-primary);
     color: var(--color-light);
     padding: 2rem 1rem;
     text-align: center;
@@ -603,7 +654,7 @@ footer {
 }
 
 .footer-social a {
-    color: var(--color-light);
+    color: var(--color-accent);
     font-size: 1.5rem;
     transition: color 0.3s ease;
 }
@@ -664,7 +715,7 @@ footer {
 
 /* Estilos generales para la sección de detalles de los planes */
 .plans-details-section {
-    background: var(--color-bg);
+    background: var(--color-background);
     padding: 4rem 1rem;
     text-align: center;
 }
@@ -691,7 +742,7 @@ footer {
 
 /* Estilos para cada plan */
 .plan-detail {
-    background: var(--color-light);
+    background: var(--color-background);
     border: 1px solid var(--color-secondary);
     border-radius: 10px;
     padding: 2rem;
@@ -718,23 +769,24 @@ footer {
 .plan-detail h3 {
     font-family: var(--font-title);
     font-size: 1.5rem;
-    color: var(--color-accent);
+    color: var(--color-accent-secondary);
     margin-bottom: 2rem;
 }
 
 .btn-buy {
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
-    background: var(--color-primary);
-    color: var(--color-light);
+    background: var(--color-accent);
+    color: var(--color-primary);
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .btn-buy:hover {
-    background: var(--color-accent);
+    background: var(--color-accent-secondary);
+    color: var(--color-light);
 }
 
 /* Responsividad para pantallas pequeñas */
@@ -821,4 +873,56 @@ footer {
     right: 15px;
     font-size: 20px;
     cursor: pointer;
+}
+
+.btn-login {
+    padding: 0.5rem 1.2rem;
+    border: 2px solid var(--color-light);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    background: transparent;
+    color: var(--color-light);
+    font-weight: 500;
+}
+
+.btn-login:hover {
+    background: var(--color-light);
+    color: var(--color-primary);
+}
+
+.plan-info {
+    background: var(--color-light);
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    border: 1px solid var(--color-secondary);
+}
+
+.plan-info p {
+    color: var(--color-primary);
+    font-weight: 600;
+    margin: 0;
+    font-family: var(--font-title);
+}
+
+/* Actualizar estilos del botón de compra */
+.btn-buy {
+    background: var(--color-accent);
+    color: var(--color-primary);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-family: var(--font-accent);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-buy:hover {
+    background: var(--color-accent-secondary);
+    color: var(--color-light);
+    transform: translateY(-2px);
 }
