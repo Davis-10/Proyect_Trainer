@@ -13,8 +13,7 @@
 - Pydantic o Marshmallow para validación de datos
 
 #Capa de Datos
-- MongoDB (Atlas o local)
-- PyMongo (o MongoEngine) integrado con Flask-PyMongo
+- Sqlite3
 
 #Seguridad
 - JWT con Flask-JWT-Extended

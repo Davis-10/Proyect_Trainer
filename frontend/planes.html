@@ -32,22 +32,22 @@
                     <div class="plan-detail">
                         <h2>Plan Basic</h2>
                         <p>Acceso a programa de entrenamiento personalizado durante 1 mes, información nutricional básica, descarga en PDF del plan de entrenamiento y derecho a 1 videollamada de análisis y seguimiento.</p>
-                        <h3>Precio: <span>Por definir</span></h3>
-                        <button class="btn-buy" onclick="window.location.href='auth/register.html?plan=basic'">Comenzar Ahora</button>
+                        <h3>Precio: <span>$29.99</span></h3>
+                        <button class="btn-buy" onclick="handlePlanSelection('basic')">Comenzar Ahora</button>
                     </div>
 
                     <div class="plan-detail">
                         <h2>Plan GoUp</h2>
                         <p>Acceso a programa de entrenamiento personalizado durante 3 meses, información nutricional, asesoría de uso de suplementos y plan de alimentación adecuado a las necesidades y 2 videollamadas de análisis y seguimiento por cada mes.</p>
-                        <h3>Precio: <span>Por definir</span></h3>
-                        <button class="btn-buy" onclick="window.location.href='auth/register.html?plan=goup'">Comenzar Ahora</button>
+                        <h3>Precio: <span>$49.99</span></h3>
+                        <button class="btn-buy" onclick="handlePlanSelection('goup')">Comenzar Ahora</button>
                     </div>
 
                     <div class="plan-detail">
                         <h2>Plan Expert</h2>
                         <p>Acceso a programa de entrenamiento personalizado durante 6 meses, información y asesoría nutricional y de suplementos más el plan de alimentación adecuado a las necesidades y 3 videollamadas de análisis y seguimiento por cada mes.</p>
-                        <h3>Precio: <span>Por definir</span></h3>
-                        <button class="btn-buy" onclick="window.location.href='auth/register.html?plan=expert'">Comenzar Ahora</button>
+                        <h3>Precio: <span>$79.99</span></h3>
+                        <button class="btn-buy" onclick="handlePlanSelection('expert')">Comenzar Ahora</button>
                     </div>
                 </div>
             </div>
@@ -92,5 +92,6 @@
             }
         }
     </script>
+    <script src="js/planes.js"></script>
 </body>
 </html>

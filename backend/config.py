@@ -5,8 +5,10 @@ class Config:
     # Configuración básica
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'dev-secret-key'
     
-    # Configuración de MongoDB
-    MONGODB_URI = os.environ.get('MONGODB_URI') or 'mongodb://localhost:27017/davis_trainer'
+    # Configuración de SQLite
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
+        'sqlite:///davis_trainer.db'
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
     
     # Configuración de JWT
     JWT_SECRET_KEY = os.environ.get('JWT_SECRET_KEY') or 'jwt-secret-key'

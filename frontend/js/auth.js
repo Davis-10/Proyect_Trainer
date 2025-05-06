@@ -9,6 +9,42 @@ function getUrlParameter(name) {
     return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
 }
 
+// Función para mostrar mensajes de error/éxito
+function showMessage(message, isError = false) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `alert ${isError ? 'alert-error' : 'alert-success'}`;
+    messageDiv.textContent = message;
+    
+    const form = document.querySelector('.auth-form');
+    form.insertBefore(messageDiv, form.firstChild);
+    
+    setTimeout(() => messageDiv.remove(), 5000);
+}
+
+// Función para validar el formulario de registro
+function validateRegisterForm(formData) {
+    const errors = [];
+    
+    if (formData.password.length < 6) {
+        errors.push('La contraseña debe tener al menos 6 caracteres');
+    }
+    
+    const edad = new Date().getFullYear() - new Date(formData.fecha_nacimiento).getFullYear();
+    if (edad < 18 || edad > 100) {
+        errors.push('Debes tener entre 18 y 100 años');
+    }
+    
+    if (formData.datos_fisicos.peso < 30 || formData.datos_fisicos.peso > 300) {
+        errors.push('El peso debe estar entre 30 y 300 kg');
+    }
+    
+    if (formData.datos_fisicos.altura < 100 || formData.datos_fisicos.altura > 250) {
+        errors.push('La altura debe estar entre 100 y 250 cm');
+    }
+    
+    return errors;
+}
+
 // Función para manejar el inicio de sesión
 async function handleLogin(event) {
     event.preventDefault();
@@ -28,16 +64,20 @@ async function handleLogin(event) {
         const data = await response.json();
         
         if (response.ok) {
-            // Guardar el token en localStorage
+            // Guardar el token y datos del usuario
             localStorage.setItem('token', data.token);
-            // Redirigir al dashboard
-            window.location.href = '/dashboard.html';
+            localStorage.setItem('user', JSON.stringify(data.user));
+            
+            // Redirigir al dashboard después de un pequeño retraso para asegurar que los datos se guarden
+            setTimeout(() => {
+                window.location.href = '../dashboard.html';
+            }, 100);
         } else {
-            alert(data.message || 'Error al iniciar sesión');
+            showMessage(data.message || 'Error al iniciar sesión', true);
         }
     } catch (error) {
         console.error('Error:', error);
-        alert('Error al conectar con el servidor');
+        showMessage('Error al conectar con el servidor', true);
     }
 }
 
@@ -64,8 +104,15 @@ async function handleRegister(event) {
             principal: document.getElementById('objetivo').value,
             tiempo_disponible: parseInt(document.getElementById('tiempo_disponible').value)
         },
-        plan_seleccionado: planSeleccionado // Agregar el plan seleccionado
+        plan_seleccionado: planSeleccionado
     };
+
+    // Validar el formulario
+    const errors = validateRegisterForm(formData);
+    if (errors.length > 0) {
+        errors.forEach(error => showMessage(error, true));
+        return;
+    }
 
     try {
         const response = await fetch(`${API_URL}/auth/register`, {
@@ -79,16 +126,27 @@ async function handleRegister(event) {
         const data = await response.json();
         
         if (response.ok) {
-            // Guardar el token en localStorage
+            // Guardar el token y datos del usuario
             localStorage.setItem('token', data.token);
-            // Redirigir al dashboard o proceso de pago
-            window.location.href = planSeleccionado ? '/payment.html' : '/dashboard.html';
+            localStorage.setItem('user', JSON.stringify(data.user));
+            
+            // Mostrar mensaje de éxito
+            showMessage('Registro exitoso', false);
+            
+            // Redirigir según el plan seleccionado
+            setTimeout(() => {
+                if (planSeleccionado) {
+                    window.location.href = '../payment.html';
+                } else {
+                    window.location.href = '../index.html';
+                }
+            }, 2000);
         } else {
-            alert(data.message || 'Error en el registro');
+            showMessage(data.message || 'Error en el registro', true);
         }
     } catch (error) {
         console.error('Error:', error);
-        alert('Error al conectar con el servidor');
+        showMessage('Error al conectar con el servidor', true);
     }
 }
 
@@ -134,6 +192,13 @@ function calcularCaloriasTotales(bmr, nivelActividad) {
     return bmr * factores[nivelActividad];
 }
 
+// Función para cerrar sesión
+function logout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    window.location.href = '../index.html';
+}
+
 // Event Listeners
 document.addEventListener('DOMContentLoaded', () => {
     // Formulario de login
@@ -147,19 +212,30 @@ document.addEventListener('DOMContentLoaded', () => {
     if (registerForm) {
         registerForm.addEventListener('submit', handleRegister);
         
-        // Si hay un plan seleccionado, mostrarlo en el formulario
+        // Mostrar plan seleccionado si existe
         const planSeleccionado = getUrlParameter('plan');
         if (planSeleccionado) {
             const planInfo = document.createElement('div');
             planInfo.className = 'plan-info';
-            planInfo.innerHTML = `<p>Plan seleccionado: ${planSeleccionado.toUpperCase()}</p>`;
+            planInfo.innerHTML = `
+                <div class="selected-plan">
+                    <h4>Plan Seleccionado</h4>
+                    <p>${planSeleccionado.toUpperCase()}</p>
+                </div>
+            `;
             registerForm.insertBefore(planInfo, registerForm.firstChild);
         }
     }
 
-    // Toggle password
+    // Toggle password visibility
     const togglePasswordBtn = document.querySelector('.toggle-password');
     if (togglePasswordBtn) {
         togglePasswordBtn.addEventListener('click', togglePassword);
     }
-}); 
+
+    // Botón de logout si existe
+    const logoutBtn = document.querySelector('.logout-btn');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', logout);
+    }
+});
