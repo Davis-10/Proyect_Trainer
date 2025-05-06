@@ -19,6 +19,38 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('#plans').scrollIntoView({ behavior: 'smooth' });
     });
 
+    // Obtener todos los enlaces que apuntan a secciones con #
+    const links = document.querySelectorAll('a[href^="#"]');
+    
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return; // Ignorar enlaces vacíos
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Manejar el botón específico de "Ir a Contacto"
+    const scrollToContactBtn = document.getElementById('scroll-to-contact');
+    if (scrollToContactBtn) {
+        scrollToContactBtn.addEventListener('click', () => {
+            const contactSection = document.getElementById('contact');
+            if (contactSection) {
+                contactSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    }
 });
 
-    

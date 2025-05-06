@@ -49,6 +49,17 @@ button, .hero-button {
     box-sizing: border-box;
 }
 
+/* Smooth scroll behavior for the entire page */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Ajustar según la altura de tu navegación fija */
+}
+
+/* Asegurar que las secciones tengan suficiente espaciado */
+section {
+    scroll-margin-top: 80px; /* Esto evita que el header fijo oculte el contenido */
+}
+
 /* Estilos base */
 body {
   background-color: var(--color-background);
@@ -142,6 +153,19 @@ h2 {
 .btn-outline:hover {
     background: white;
     color: #333;
+}
+
+.btn-login {
+    background-color: var(--color-secondary);
+    color: var(--color-light);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: var(--color-primary);
+    transform: translateY(-2px);
 }
 
 /* Hero Section */
@@ -250,7 +274,7 @@ main {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
-    padding: 2rem;
+    padding: 5rem;
     max-width: 1500px;
     margin: 0 auto;
 }
@@ -294,8 +318,26 @@ main {
     transition: background 0.3s ease;
 }
 
-.item:hover .item-bg::after {
-    background: var(--bento-overlay-hover);
+/* Remover background overlay para items específicos */
+.item1 .item-bg::after,
+.item2 .item-bg::after,
+.item3 .item-bg::after {
+    background: none !important; /* Forzar que no tenga background */
+    content: none; /* Evitar que se cree el pseudo-elemento */
+}
+
+/* Ajustar estilos de texto para los items sin overlay */
+.item1 .item-content *,
+.item2 .item-content *,
+.item3 .item-content * {
+    color: var(--color-light);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.item1 .item-link,
+.item2 .item-link,
+.item3 .item-link {
+    color: var(--color-accent);
 }
 
 .item-content {
@@ -350,6 +392,15 @@ main {
 .item2 {
     grid-column: span 1;
     grid-row: span 4;
+}
+
+.item2 .item-bg::after {
+    display: none; /* Asegurarnos de que el pseudo-elemento no se muestre */
+}
+
+.item2 .before-after {
+    position: relative;
+    z-index: 2; /* Asegurar que las imágenes estén por encima del background */
 }
 
 .item3 {
@@ -443,7 +494,7 @@ main {
 
 .plans-section {
     background: var(--color-background);
-    padding: 4rem 1rem;
+    padding: 6rem 1rem;
     text-align: center;
 }
 
@@ -526,7 +577,7 @@ main {
 
 .contact-section {
     background: var(--color-background);
-    padding: 4rem 1rem;
+    padding: 6rem 1rem;
     text-align: center;
 }
 
