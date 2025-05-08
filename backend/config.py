@@ -4,16 +4,16 @@ from datetime import timedelta
 class Config:
     # Configuración básica
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'dev-secret-key'
-    
-    # Configuración de SQLite
+
+    # Configuración de SQLite - Usando la base de datos existente
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
         'sqlite:///davis_trainer.db'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    
+
     # Configuración de JWT
     JWT_SECRET_KEY = os.environ.get('JWT_SECRET_KEY') or 'jwt-secret-key'
     JWT_ACCESS_TOKEN_EXPIRES = timedelta(days=1)
-    
+
     # Configuración de CORS
     CORS_HEADERS = 'Content-Type'
 

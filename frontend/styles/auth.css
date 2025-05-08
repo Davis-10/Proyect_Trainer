@@ -1,61 +1,152 @@
+/* Contenedor principal del login - Ocupa toda la altura de la pantalla y centra el contenido */
 .auth-container {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--gradient-primary);
-    padding: 1rem;
+    min-height: 100vh; /* Altura mínima del 100% de la ventana */
+    display: flex; /* Usamos flexbox para centrar */
+    align-items: center; /* Centramos verticalmente */
+    justify-content: center; /* Centramos horizontalmente */
+    background-color: #f5f5f5; /* Fondo gris claro */
+    padding: 1rem; /* Espaciado interno */
 }
 
+/* Tarjeta de autenticación - Contiene el formulario de login */
 .auth-card {
-    background: var(--color-background);
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex; /* Usamos flexbox para las dos columnas */
+    flex-direction: column; /* En móvil, las secciones se apilan verticalmente */
+    background: white; /* Fondo blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    width: 100%; /* Ancho completo del contenedor */
+    max-width: 450px; /* Ancho máximo para móviles aumentado */
+    overflow: hidden; /* Para que los bordes redondeados se apliquen correctamente */
+}
+
+/* Sección izquierda - Visible solo en pantallas grandes */
+.auth-left {
+    display: none; /* Oculto en móviles */
+    background-color: var(--color-accent-secondary); /* Color de acento secundario (marrón rojizo) */
+    color: white; /* Texto blanco */
+    padding: 2rem; /* Espaciado interno */
+    position: relative; /* Para posicionar elementos absolutos */
+    text-align: center; /* Texto centrado */
+}
+
+/* Sección derecha - Formulario */
+.auth-right {
+    padding: 2.5rem; /* Espaciado interno aumentado */
+    background-color: white; /* Fondo blanco */
+}
+
+/* Navegación superior (Iniciar sesión / Registrarse) */
+.auth-nav {
+    display: flex;
+    justify-content: flex-end; /* Alineado a la derecha */
+    margin-bottom: 1.5rem; /* Espacio inferior */
+}
+
+.auth-nav a {
+    color: var(--color-text-secondary); /* Color de texto secundario */
+    text-decoration: none; /* Sin subrayado */
+    margin-left: 1rem; /* Espacio entre enlaces */
+    font-weight: 500; /* Semi-negrita */
+    padding: 0.5rem 0; /* Espaciado vertical */
+    position: relative; /* Para el indicador activo */
+    transition: color 0.3s ease; /* Transición suave */
+}
+
+.auth-nav a.active {
+    color: var(--color-primary); /* Color principal para el enlace activo */
+}
+
+.auth-nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    max-width: 400px;
+    height: 2px;
+    background-color: var(--color-primary); /* Indicador de enlace activo */
+}
+
+.auth-nav a:hover {
+    color: var(--color-primary); /* Color al pasar el cursor */
+}
+
+/* Media query para pantallas medianas y grandes */
+@media (min-width: 768px) {
+    .auth-card {
+        flex-direction: row; /* Cambiamos a disposición horizontal */
+        max-width: 1000px; /* Ancho máximo más grande */
+    }
+
+    .auth-left {
+        display: flex; /* Mostramos la sección izquierda */
+        flex-direction: column; /* Elementos en columna */
+        justify-content: space-between; /* Distribuir espacio */
+        width: 40%; /* 40% del ancho total */
+    }
+
+    .auth-right {
+        width: 60%; /* 60% del ancho total */
+        padding: 3rem; /* Espaciado interno aumentado para pantallas grandes */
+    }
 }
 
 /* Estilos específicos para el formulario de registro */
-.register-card {
-    max-width: 600px;
-}
-
 .form-section {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     padding-bottom: 1rem;
-    border-bottom: 1px solid var(--color-light);
+    border-bottom: 1px solid #eee;
 }
 
-.form-section h3 {
-    color: var(--color-primary);
+.form-section h4 {
+    color: var(--color-secondary);
     font-family: var(--font-title);
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     margin-bottom: 1rem;
+    font-weight: 500;
 }
 
 .form-section:last-of-type {
     border-bottom: none;
+    margin-bottom: 0;
+}
+
+/* Ajustes para pantallas medianas y grandes */
+@media (min-width: 768px) {
+    .auth-card .auth-right {
+        overflow-y: auto; /* Permitir scroll en formularios largos */
+        max-height: 80vh; /* Altura máxima */
+    }
+
+    .form-section h4 {
+        font-size: 1.2rem;
+    }
 }
 
 /* Estilos para selects */
 select {
-    padding: 0.75rem;
-    border: 1px solid var(--color-secondary);
-    border-radius: 5px;
+    width: 100%; /* Ancho completo */
+    padding: 0.85rem; /* Espaciado interno aumentado */
+    padding-left: 40px; /* Espacio para el icono */
+    border: 1px solid #e0e0e0; /* Borde gris claro */
+    border-radius: 4px; /* Bordes ligeramente redondeados */
     font-family: var(--font-text);
-    background-color: var(--color-background);
+    font-size: 1rem; /* Tamaño del texto aumentado */
+    background-color: #f5f5f5; /* Fondo gris claro */
+    color: var(--color-text-primary); /* Color de texto principal */
     cursor: pointer;
     appearance: none;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23666' viewBox='0 0 16 16'%3E%3Cpath d='M8 11l-4-4h8l-4 4z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 1rem center;
     padding-right: 2.5rem;
+    transition: all 0.3s ease;
 }
 
 select:focus {
     outline: none;
     border-color: var(--color-primary);
+    background-color: white; /* Fondo blanco al enfocar */
     box-shadow: 0 0 0 2px rgba(14, 86, 115, 0.1);
 }
 
@@ -71,82 +162,174 @@ input[type="number"]::-webkit-inner-spin-button {
     margin: 0;
 }
 
-.auth-header {
-    text-align: center;
-    margin-bottom: 2rem;
+/* Logo y SVG de mancuerna */
+.auth-logo {
+    margin-bottom: 2rem; /* Espacio debajo del logo */
+    text-align: center; /* Centrado */
 }
 
-.auth-header h2 {
-    color: var(--color-primary);
-    font-family: var(--font-title);
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
+.dumbbell-icon {
+    width: 60px; /* Tamaño del icono */
+    height: 60px;
+    fill: white; /* Color blanco para el SVG */
 }
 
-.auth-header p {
-    color: var(--color-text-secondary);
-    font-family: var(--font-text);
+/* Mensaje motivacional en la sección izquierda */
+.auth-message {
+    text-align: center; /* Texto centrado */
+    margin-bottom: 2rem; /* Espacio inferior */
 }
 
+.auth-message h2 {
+    font-family: var(--font-title); /* Fuente de títulos */
+    font-size: 1.8rem; /* Tamaño del título */
+    margin-bottom: 1rem; /* Espacio debajo */
+    color: white; /* Color blanco */
+    line-height: 1.3; /* Altura de línea */
+}
+
+.auth-message p {
+    font-family: var(--font-text); /* Fuente de texto */
+    font-size: 1.1rem; /* Tamaño del texto */
+    color: rgba(255, 255, 255, 0.9); /* Blanco con ligera transparencia */
+    line-height: 1.5; /* Altura de línea */
+}
+
+/* Elementos decorativos en la sección izquierda */
+.auth-decoration {
+    position: absolute; /* Posicionamiento absoluto */
+    bottom: 2rem; /* Distancia desde abajo */
+    left: 0; /* Alineado a la izquierda */
+    width: 100%; /* Ancho completo */
+    height: 100px; /* Altura */
+    opacity: 0.2; /* Semi-transparente */
+    background-image:
+        radial-gradient(circle, white 1px, transparent 1px),
+        radial-gradient(circle, white 1px, transparent 1px);
+    background-size: 20px 20px; /* Tamaño de los puntos */
+    background-position: 0 0, 10px 10px; /* Posición de los puntos */
+    pointer-events: none; /* No interfiere con los clics */
+}
+
+/* Título del formulario */
+.auth-form h3 {
+    font-family: var(--font-title); /* Fuente de títulos */
+    color: var(--color-primary); /* Color principal */
+    font-size: 1.5rem; /* Tamaño del título */
+    margin-bottom: 1.5rem; /* Espacio debajo */
+    text-align: center; /* Centrado en móviles */
+}
+
+/* Ajustes para pantallas medianas y grandes */
+@media (min-width: 768px) {
+    .dumbbell-icon {
+        width: 80px; /* Icono más grande */
+        height: 80px;
+    }
+
+    .auth-message h2 {
+        font-size: 2rem; /* Título más grande */
+    }
+
+    .auth-form h3 {
+        text-align: left; /* Alineado a la izquierda en pantallas grandes */
+        font-size: 1.8rem; /* Título más grande */
+    }
+}
+
+/* Formulario de autenticación */
 .auth-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+    display: flex; /* Usamos flexbox */
+    flex-direction: column; /* Elementos en columna */
+    gap: 1.5rem; /* Espacio entre elementos */
 }
 
+/* Grupo de formulario (cada campo) */
 .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    display: flex; /* Flexbox */
+    flex-direction: column; /* Elementos en columna */
+    gap: 0.5rem; /* Espacio entre elementos */
+    margin-bottom: 0.5rem; /* Espacio inferior */
 }
 
+/* Etiquetas de los campos */
 .form-group label {
-    color: var(--color-text-primary);
-    font-family: var(--font-text);
-    font-weight: 500;
+    font-family: var(--font-text); /* Fuente de texto */
+    color: var(--color-text-primary); /* Color de texto principal */
+    font-size: 0.9rem; /* Tamaño pequeño */
+    font-weight: 500; /* Semi-negrita */
 }
 
+/* Contenedor para campos de entrada con iconos */
+.input-icon-wrapper {
+    width: 100%; /* Ancho completo */
+    position: relative; /* Para posicionar el icono absolutamente */
+    display: flex; /* Flexbox */
+    align-items: center; /* Centrado vertical */
+}
+
+/* Estilo para los iconos dentro de los campos */
+.input-icon-wrapper i {
+    position: absolute; /* Posicionamiento absoluto */
+    left: 15px; /* Distancia desde la izquierda */
+    color: var(--color-text-secondary); /* Color de texto secundario */
+    font-size: 16px; /* Tamaño del icono */
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+/* Estilo para los campos de entrada */
 .form-group input {
-    padding: 0.75rem;
-    border: 1px solid var(--color-secondary);
-    border-radius: 5px;
-    font-family: var(--font-text);
-    transition: all 0.3s ease;
+    width: 100%; /* Ancho completo */
+    padding: 0.85rem; /*Espaciado interno aumentado */
+    padding-left: 40px; /* Espacio adicional a la izquierda para el icono */
+    background-color: #f5f5f5; /* Fondo gris claro */
+    border: 1px solid #e0e0e0; /* Borde gris claro */
+    border-radius: 4px; /* Bordes ligeramente redondeados */
+    color: var(--color-text-primary); /* Color de texto principal */
+    font-family: var(--font-text); /* Fuente definida en variables */
+    font-size: 1rem; /* Tamaño del texto aumentado */
+    transition: all 0.3s ease; /* Transición suave para efectos */
 }
 
+/* Estilo para el texto de placeholder */
+.form-group input::placeholder {
+    color: #aaa; /* Gris medio */
+    font-size: 0.9rem; /* Tamaño ligeramente menor */
+}
+
+/* Estilo cuando el campo está enfocado */
 .form-group input:focus {
-    outline: none;
-    border-color: var(--color-primary);
-    box-shadow: 0 0 0 2px rgba(14, 86, 115, 0.1);
+    outline: none; /* Eliminar el contorno predeterminado */
+    border-color: var(--color-primary); /* Borde con color principal */
+    background-color: white; /* Fondo blanco */
+    box-shadow: 0 0 0 2px rgba(14, 86, 115, 0.1); /* Sombra sutil */
 }
 
-.password-input {
-    position: relative;
-}
-
-.toggle-password {
-    position: absolute;
-    right: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    color: var(--color-text-secondary);
-}
-
+/* Opciones del formulario (recordarme y olvidé contraseña) */
 .form-options {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
 }
 
+/* Checkbox de recordarme */
 .remember-me {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     color: var(--color-text-secondary);
+    cursor: pointer;
 }
 
+.remember-me input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+    cursor: pointer;
+}
+
+/* Enlace de olvidé contraseña */
 .forgot-password {
     color: var(--color-secondary);
     text-decoration: none;
@@ -155,40 +338,107 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .forgot-password:hover {
     color: var(--color-primary);
+    text-decoration: underline;
 }
 
-.btn-auth {
-    background: var(--color-primary);
-    color: var(--color-light);
-    padding: 0.75rem;
-    border: none;
-    border-radius: 5px;
-    font-family: var(--font-accent);
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.btn-auth:hover {
-    background: var(--color-secondary);
-    transform: translateY(-1px);
-}
-
-.auth-footer {
+/* Footer móvil (visible solo en móviles) */
+.auth-footer-mobile {
     text-align: center;
     margin-top: 1.5rem;
+    font-size: 0.9rem;
     color: var(--color-text-secondary);
 }
 
-.auth-footer a {
+.auth-footer-mobile a {
     color: var(--color-primary);
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s ease;
 }
 
-.auth-footer a:hover {
+.auth-footer-mobile a:hover {
+    text-decoration: underline;
+}
+
+/* Ajustes para pantallas medianas y grandes */
+@media (min-width: 768px) {
+    .form-group label {
+        font-size: 1rem; /* Etiquetas más grandes */
+    }
+
+    .form-group input {
+        padding: 0.85rem 1rem 0.85rem 45px; /* Más espaciado */
+        font-size: 1rem; /* Texto más grande */
+    }
+
+    .input-icon-wrapper i {
+        font-size: 18px; /* Iconos más grandes */
+    }
+
+    /* Ocultar footer móvil en pantallas grandes */
+    .auth-footer-mobile {
+        display: none;
+    }
+}
+
+/* Estilos para el contenedor del toggle de contraseña */
+.password-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    color: var(--color-text-secondary);
+    font-size: 0.85rem;
+}
+
+.password-toggle-wrapper i {
+    margin-right: 0.5rem;
+    font-size: 1rem;
     color: var(--color-secondary);
+}
+
+.password-toggle-wrapper:hover {
+    color: var(--color-primary);
+}
+
+.password-toggle-wrapper:hover i {
+    color: var(--color-primary);
+}
+
+/* Estos estilos ya están definidos arriba */
+
+/* Botón de autenticación - Estilo del botón de iniciar sesión */
+.btn-auth {
+    background: var(--color-accent-secondary); /* Color de acento secundario (marrón rojizo) */
+    color: white; /* Texto blanco */
+    padding: 1rem; /* Espaciado interno aumentado */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes ligeramente redondeados */
+    font-family: var(--font-accent); /* Fuente definida en variables */
+    font-weight: 600; /* Peso de fuente semi-negrita */
+    cursor: pointer; /* Cursor tipo puntero al pasar por encima */
+    transition: all 0.3s ease; /* Transición suave para efectos */
+    width: 100%; /* Ancho completo */
+    margin-top: 2rem; /* Margen superior aumentado */
+    font-size: 1.1rem; /* Tamaño del texto aumentado */
+    letter-spacing: 0.5px; /* Espaciado entre letras */
+    box-shadow: 0 4px 8px rgba(140, 65, 48, 0.2); /* Sombra sutil con el color del botón */
+}
+
+/* Efecto al pasar el cursor por encima del botón */
+.btn-auth:hover {
+    background: var(--color-primary); /* Color principal al pasar el cursor */
+    transform: translateY(-2px); /* Efecto de elevación */
+    box-shadow: 0 6px 12px rgba(14, 86, 115, 0.3); /* Sombra más pronunciada */
+}
+
+/* Ajustes para pantallas medianas y grandes */
+@media (min-width: 768px) {
+    .btn-auth {
+        padding: 1.1rem; /* Más espaciado */
+        font-size: 1.2rem; /* Texto más grande */
+        margin-top: 2.5rem; /* Más margen superior */
+        max-width: 100%; /* Ancho máximo */
+    }
 }
 
 /* Alertas */

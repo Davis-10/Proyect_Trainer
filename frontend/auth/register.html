@@ -7,98 +7,160 @@
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/auth.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <div class="auth-container">
-        <div class="auth-card register-card">
-            <div class="auth-header">
-                <h2>Crear Cuenta</h2>
-                <p>Únete a DavisTrainer y comienza tu transformación</p>
+        <div class="auth-card">
+            <!-- Sección izquierda con imagen y mensaje -->
+            <div class="auth-left">
+                <!-- Logo en la parte superior -->
+                <div class="auth-logo">
+                    <svg class="dumbbell-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                        <!-- SVG de mancuerna -->
+                        <path d="M96 64c0-17.7 14.3-32 32-32h32c17.7 0 32 14.3 32 32V224v64V448c0 17.7-14.3 32-32 32H128c-17.7 0-32-14.3-32-32V384H64c-17.7 0-32-14.3-32-32V288c0-17.7 14.3-32 32-32H96V224H64c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32H96V64zm448 0v64h32c17.7 0 32 14.3 32 32v32c0 17.7-14.3 32-32 32H544v32h32c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H544v64c0 17.7-14.3 32-32 32H480c-17.7 0-32-14.3-32-32V288 224 64c0-17.7 14.3-32 32-32h32c17.7 0 32 14.3 32 32zM416 224v64H224V224H416z"/>
+                    </svg>
+                </div>
+
+                <!-- Mensaje motivacional -->
+                <div class="auth-message">
+                    <h2>Sé parte de nuestro increíble equipo</h2>
+                    <p>y diviértete entrenando con nosotros</p>
+                </div>
+
+                <!-- Elementos decorativos -->
+                <div class="auth-decoration"></div>
             </div>
-            <form id="registerForm" class="auth-form">
-                <!-- Datos personales -->
-                <div class="form-section">
-                    <h3>Datos Personales</h3>
-                    <div class="form-group">
-                        <label for="nombre">Nombre Completo</label>
-                        <input type="text" id="nombre" name="nombre" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Correo Electrónico</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Contraseña</label>
-                        <div class="password-input">
-                            <input type="password" id="password" name="password" required>
-                            <i class="fas fa-eye toggle-password"></i>
+
+            <!-- Sección derecha con formulario -->
+            <div class="auth-right">
+                <!-- Botones de navegación superior -->
+                <div class="auth-nav">
+                    <a href="login.html">Iniciar Sesión</a>
+                    <a href="register.html" class="active">Registrarse</a>
+                </div>
+
+                <!-- Formulario de registro -->
+                <form id="registerForm" class="auth-form">
+                    <h3>Crear cuenta</h3>
+
+                    <!-- Datos personales -->
+                    <div class="form-section">
+                        <h4>Datos Personales</h4>
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo</label>
+                            <div class="input-icon-wrapper">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre completo" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico</label>
+                            <div class="input-icon-wrapper">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="email" name="email" placeholder="Ingresa tu correo electrónico" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Contraseña</label>
+                            <div class="input-icon-wrapper">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="password" name="password" placeholder="Crea una contraseña segura" required>
+                            </div>
+                            <div class="password-toggle-wrapper">
+                                <i class="fas fa-eye toggle-password"></i>
+                                <span>Mostrar contraseña</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="fecha_nacimiento">Fecha de Nacimiento</label>
+                            <div class="input-icon-wrapper">
+                                <i class="fas fa-calendar"></i>
+                                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="genero">Género</label>
+                            <div class="input-icon-wrapper">
+                                <i class="fas fa-venus-mars"></i>
+                                <select id="genero" name="genero" required>
+                                    <option value="">Selecciona una opción</option>
+                                    <option value="masculino">Masculino</option>
+                                    <option value="femenino">Femenino</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="fecha_nacimiento">Fecha de Nacimiento</label>
-                        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="genero">Género</label>
-                        <select id="genero" name="genero" required>
-                            <option value="">Selecciona una opción</option>
-                            <option value="masculino">Masculino</option>
-                            <option value="femenino">Femenino</option>
-                            <option value="otro">Otro</option>
-                        </select>
-                    </div>
-                </div>
 
-                <!-- Datos físicos -->
-                <div class="form-section">
-                    <h3>Datos Físicos</h3>
-                    <div class="form-group">
-                        <label for="peso">Peso (kg)</label>
-                        <input type="number" id="peso" name="peso" step="0.1" required>
+                    <!-- Datos físicos -->
+                    <div class="form-section">
+                        <h4>Datos Físicos</h4>
+                        <div class="form-group">
+                            <label for="peso">Peso (kg)</label>
+                            <div class="input-icon-wrapper">
+                                <i class="fas fa-weight"></i>
+                                <input type="number" id="peso" name="peso" step="0.1" placeholder="Ingresa tu peso en kg" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="altura">Altura (cm)</label>
+                            <div class="input-icon-wrapper">
+                                <i class="fas fa-ruler-vertical"></i>
+                                <input type="number" id="altura" name="altura" placeholder="Ingresa tu altura en cm" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="nivel_actividad">Nivel de Actividad Física</label>
+                            <div class="input-icon-wrapper">
+                                <i class="fas fa-running"></i>
+                                <select id="nivel_actividad" name="nivel_actividad" required>
+                                    <option value="">Selecciona una opción</option>
+                                    <option value="sedentario">Sedentario</option>
+                                    <option value="ligero">Actividad Ligera</option>
+                                    <option value="moderado">Actividad Moderada</option>
+                                    <option value="activo">Muy Activo</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="altura">Altura (cm)</label>
-                        <input type="number" id="altura" name="altura" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="nivel_actividad">Nivel de Actividad Física</label>
-                        <select id="nivel_actividad" name="nivel_actividad" required>
-                            <option value="">Selecciona una opción</option>
-                            <option value="sedentario">Sedentario</option>
-                            <option value="ligero">Actividad Ligera</option>
-                            <option value="moderado">Actividad Moderada</option>
-                            <option value="activo">Muy Activo</option>
-                        </select>
-                    </div>
-                </div>
 
-                <!-- Objetivos -->
-                <div class="form-section">
-                    <h3>Objetivos</h3>
-                    <div class="form-group">
-                        <label for="objetivo">Objetivo Principal</label>
-                        <select id="objetivo" name="objetivo" required>
-                            <option value="">Selecciona una opción</option>
-                            <option value="perdida_peso">Pérdida de Peso</option>
-                            <option value="ganancia_muscular">Ganancia Muscular</option>
-                            <option value="tonificacion">Tonificación</option>
-                            <option value="resistencia">Mejorar Resistencia</option>
-                        </select>
+                    <!-- Objetivos -->
+                    <div class="form-section">
+                        <h4>Objetivos</h4>
+                        <div class="form-group">
+                            <label for="objetivo">Objetivo Principal</label>
+                            <div class="input-icon-wrapper">
+                                <i class="fas fa-bullseye"></i>
+                                <select id="objetivo" name="objetivo" required>
+                                    <option value="">Selecciona una opción</option>
+                                    <option value="perdida_peso">Pérdida de Peso</option>
+                                    <option value="ganancia_muscular">Ganancia Muscular</option>
+                                    <option value="tonificacion">Tonificación</option>
+                                    <option value="resistencia">Mejorar Resistencia</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="tiempo_disponible">Tiempo Disponible (horas/semana)</label>
+                            <div class="input-icon-wrapper">
+                                <i class="fas fa-clock"></i>
+                                <input type="number" id="tiempo_disponible" name="tiempo_disponible" min="1" max="20" placeholder="Horas por semana" required>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="tiempo_disponible">Tiempo Disponible (horas/semana)</label>
-                        <input type="number" id="tiempo_disponible" name="tiempo_disponible" min="1" max="20" required>
-                    </div>
-                </div>
 
-                <button type="submit" class="btn-auth">Crear Cuenta</button>
-            </form>
-            <div class="auth-footer">
-                <p>¿Ya tienes una cuenta? <a href="login.html">Inicia sesión aquí</a></p>
+                    <!-- Botón de registro -->
+                    <button type="submit" class="btn-auth">Crear Cuenta</button>
+
+                    <!-- Enlace para iniciar sesión (visible solo en móvil) -->
+                    <div class="auth-footer-mobile">
+                        <p>¿Ya tienes una cuenta? <a href="login.html">Iniciar Sesión</a></p>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
     <script src="../js/auth.js"></script>
 </body>
-</html> 
+</html>

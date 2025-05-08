@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Davis Trainer</title>
+    <title>Davis Trainer | Transformación Física Garantizada</title>
+    <meta name="description" content="Programas de entrenamiento personalizado y nutrición deportiva para transformar tu cuerpo y alcanzar tus metas fitness. Resultados garantizados.">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Montserrat:wght@400;600&family=Open+Sans:wght@400;600&family=Poppins:wght@400;600&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="./styles/normalize.css">
@@ -12,30 +13,132 @@
 <body>
     <header>
         <div class="nav-container">
-            <h2>DavisTrainer</h2>
+            <h2><i class="fas fa-bolt"></i> DavisTrainer</h2>
             <nav class="nav-links">
+                <a href="#results">Resultados</a>
                 <a href="#plans">Planes</a>
                 <a href="#contact">Contacto</a>
                 <a href="auth/login.html" class="btn-login">Iniciar Sesión</a>
             </nav>
         </div>
-        
+
         <section class="hero">
-            <div class="hero-content">
-                <h1 class="hero-title">Transforma tu cuerpo</h1>
-                <p class="hero-text">Programas de entrenamiento personalizado y nutrición deportiva para alcanzar tus metas</p>
-                <a href="#" class="hero-button">Comenzar ahora</a>
+            <div class="hero-overlay"></div>
+            <div class="hero-content animate-fade-up">
+                <span class="hero-badge">RESULTADOS GARANTIZADOS</span>
+                <h1 class="hero-title">TRANSFORMA TU CUERPO<br><span class="hero-highlight">ALCANZA TU POTENCIAL</span></h1>
+                <p class="hero-text">Programas de entrenamiento personalizado y nutrición deportiva diseñados científicamente para maximizar resultados</p>
+                <div class="hero-cta">
+                    <a href="#plans" class="hero-button pulse">COMENZAR AHORA <i class="fas fa-arrow-right"></i></a>
+                    <a href="#contact" class="hero-button-outline">CONSULTA GRATIS</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Clientes Satisfechos</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Tasa de Éxito</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label">Años de Experiencia</span>
+                    </div>
+                </div>
             </div>
         </section>
     </header>
 
-    <section class="prueba">
+    <section id="why-us" class="why-us-section">
+        <div class="container">
+            <div class="section-header animate-fade-up">
+                <h2 class="section-title">¿POR QUÉ ELEGIR DAVISTRAINER?</h2>
+                <p class="section-subtitle">Entrenamiento personalizado basado en ciencia y resultados comprobados</p>
+            </div>
 
+            <div class="features-grid">
+                <div class="feature-card animate-fade-up" data-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h3>Planes Personalizados</h3>
+                    <p>Cada programa está diseñado específicamente para tu cuerpo, objetivos y nivel de condición física.</p>
+                </div>
+
+                <div class="feature-card animate-fade-up" data-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-apple-alt"></i>
+                    </div>
+                    <h3>Nutrición Científica</h3>
+                    <p>Planes nutricionales basados en tu metabolismo y necesidades específicas para maximizar resultados.</p>
+                </div>
+
+                <div class="feature-card animate-fade-up" data-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Seguimiento Constante</h3>
+                    <p>Monitoreo de progreso y ajustes continuos para garantizar resultados óptimos en todo momento.</p>
+                </div>
+
+                <div class="feature-card animate-fade-up" data-delay="400">
+                    <div class="feature-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>Resultados Garantizados</h3>
+                    <p>Compromiso con tu éxito respaldado por nuestra garantía de satisfacción o te devolvemos tu dinero.</p>
+                </div>
+            </div>
+        </div>
     </section>
-    <main>
 
+    <section id="results" class="results-section">
+        <div class="container">
+            <div class="section-header animate-fade-up">
+                <h2 class="section-title">TRANSFORMACIONES REALES</h2>
+                <p class="section-subtitle">Clientes que cambiaron sus vidas con nuestros programas</p>
+            </div>
+
+            <div class="transformations-slider animate-fade-up">
+                <div class="transformation-card">
+                    <div class="before-after-container">
+                        <div class="before-image">
+                            <img src="./assets/before.jpg" alt="Antes">
+                            <span class="image-label">ANTES</span>
+                        </div>
+                        <div class="after-image">
+                            <img src="./assets/after.jpg" alt="Después">
+                            <span class="image-label">DESPUÉS</span>
+                        </div>
+                    </div>
+                    <div class="transformation-content">
+                        <h3>Carlos M. <span class="transformation-time">12 Semanas</span></h3>
+                        <p class="transformation-quote">"Perdí 15kg y gané masa muscular. El programa personalizado hizo toda la diferencia."</p>
+                        <div class="transformation-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">-15kg</span>
+                                <span class="stat-label">Grasa</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">+5kg</span>
+                                <span class="stat-label">Músculo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Más tarjetas de transformación se añadirían aquí en un slider real -->
+            </div>
+
+            <div class="cta-container animate-fade-up">
+                <a href="#plans" class="hero-button">QUIERO RESULTADOS COMO ESTOS <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <main>
         <div class="grid">
-            <div class="item item1">
+            <div class="item item1 animate-fade-up">
                 <div class="item-bg">
                     <img src="./assets/item1.jpeg" alt="Entrenamiento Personal">
                 </div>
@@ -47,7 +150,7 @@
                 </div>
             </div>
 
-            <div class="item item2">
+            <div class="item item2 animate-fade-up" data-delay="100">
                 <div class="item-bg">
                     <img src="./assets/transformaciones_image.jpeg" alt="Transformaciones">
                 </div>
@@ -58,11 +161,11 @@
                     </div>
                     <h2>Transformaciones Épicas</h2>
                     <p>Mira los increíbles resultados de nuestros clientes.</p>
-                    <a href="#" class="item-link">Ver historias →</a>
+                    <a href="#results" class="item-link">Ver historias →</a>
                 </div>
             </div>
 
-            <div class="item item3">
+            <div class="item item3 animate-fade-up" data-delay="200">
                 <div class="item-bg">
                     <img src="./assets/nutri_1.jpeg" alt="Vida Saludable">
                 </div>
@@ -78,7 +181,7 @@
                 </div>
             </div>
 
-            <div class="item item4">
+            <div class="item item4 animate-fade-up" data-delay="300">
                 <div class="item-bg">
                     <img src="./assets/consult-bg.jpg" alt="Consulta Gratuita">
                 </div>
@@ -86,11 +189,11 @@
                     <i class="fas fa-calendar-check"></i>
                     <h2>Reserva una Consulta Gratuita</h2>
                     <p>Primera sesión sin costo para evaluar tus objetivos</p>
-                    <button class="btn-reservar">Agendar Ahora</button>
+                    <button class="btn-reservar pulse">Agendar Ahora</button>
                 </div>
             </div>
 
-            <div class="item item5">
+            <div class="item item5 animate-fade-up" data-delay="400">
                 <div class="item-bg">
                     <img src="./assets/contact-bg.jpg" alt="Contacto">
                 </div>
@@ -102,80 +205,252 @@
                 </div>
             </div>
         </div>
-
     </main>
 
     <section id="plans" class="plans-section">
         <div class="plans-container">
-            <h2>Planes de Transformación</h2>
+            <div class="section-header animate-fade-up">
+                <h2 class="section-title">PLANES DE TRANSFORMACIÓN</h2>
+                <p class="section-subtitle">Elige el programa que mejor se adapte a tus objetivos y comienza tu transformación hoy</p>
+            </div>
+
             <div class="plans-grid">
-                <div class="plan-card" id="basic">
+                <div class="plan-card" id="basic" data-delay="100">
+                    <div class="plan-badge">POPULAR</div>
                     <h3>Plan Basic</h3>
-                    <p>Acceso a programa de entrenamiento personalizado durante 1 mes, información nutricional básica, descarga en PDF del plan de entrenamiento y derecho a 1 videollamada de análisis y seguimiento.</p>
-                    <p>Precio: Desde $29.99</p>
-                    <a href="planes.html#basic" class="hero-button">Acceder al Plan</a>
+                    <div class="plan-price">
+                        <span class="price">$29.99</span>
+                        <span class="period">/ mes</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Programa de entrenamiento personalizado (1 mes)</li>
+                        <li><i class="fas fa-check"></i> Información nutricional básica</li>
+                        <li><i class="fas fa-check"></i> Descarga en PDF del plan</li>
+                        <li><i class="fas fa-check"></i> 1 videollamada de análisis y seguimiento</li>
+                    </ul>
+                    <div class="guarantee">
+                        <i class="fas fa-shield-alt"></i> 100% Garantía de Satisfacción
+                    </div>
+                    <a href="planes.html#basic" class="hero-button">COMENZAR AHORA <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="plan-card" id="goup">
+
+                <div class="plan-card featured" id="goup" data-delay="200">
+                    <div class="plan-badge">RECOMENDADO</div>
                     <h3>Plan GoUp</h3>
-                    <p>Acceso a programa de entrenamiento personalizado durante 3 meses, información nutricional, asesoría de uso de suplementos y plan de alimentación adecuado a las necesidades y 2 videollamadas de análisis y seguimiento por cada mes.</p>
-                    <p>Precio: Desde $49.99</p>
-                    <a href="planes.html#goup" class="hero-button">Acceder al Plan</a>
+                    <div class="plan-price">
+                        <span class="price">$49.99</span>
+                        <span class="period">/ mes</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Programa de entrenamiento personalizado (3 meses)</li>
+                        <li><i class="fas fa-check"></i> Plan nutricional completo</li>
+                        <li><i class="fas fa-check"></i> Asesoría de suplementación</li>
+                        <li><i class="fas fa-check"></i> 2 videollamadas mensuales de seguimiento</li>
+                        <li><i class="fas fa-check"></i> Acceso a comunidad privada</li>
+                    </ul>
+                    <div class="guarantee">
+                        <i class="fas fa-shield-alt"></i> 100% Garantía de Satisfacción
+                    </div>
+                    <a href="planes.html#goup" class="hero-button pulse">COMENZAR AHORA <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="plan-card" id="expert">
+
+                <div class="plan-card" id="expert" data-delay="300">
+                    <div class="plan-badge">PREMIUM</div>
                     <h3>Plan Expert</h3>
-                    <p>Acceso a programa de entrenamiento personalizado durante 6 meses, información y asesoría nutricional y de suplementos más el plan de alimentación adecuado a las necesidades y 3 videollamadas de análisis y seguimiento por cada mes.</p>
-                    <p>Precio: Desde $79.99</p>
-                    <a href="planes.html#expert" class="hero-button">Acceder al Plan</a>
+                    <div class="plan-price">
+                        <span class="price">$79.99</span>
+                        <span class="period">/ mes</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Programa de entrenamiento personalizado (6 meses)</li>
+                        <li><i class="fas fa-check"></i> Plan nutricional avanzado</li>
+                        <li><i class="fas fa-check"></i> Asesoría completa de suplementación</li>
+                        <li><i class="fas fa-check"></i> 3 videollamadas mensuales de seguimiento</li>
+                        <li><i class="fas fa-check"></i> Acceso a comunidad privada</li>
+                        <li><i class="fas fa-check"></i> Soporte prioritario 24/7</li>
+                    </ul>
+                    <div class="guarantee">
+                        <i class="fas fa-shield-alt"></i> 100% Garantía de Satisfacción
+                    </div>
+                    <a href="planes.html#expert" class="hero-button">COMENZAR AHORA <i class="fas fa-arrow-right"></i></a>
                 </div>
+            </div>
+
+            <div class="plans-note animate-fade-up">
+                <p><i class="fas fa-info-circle"></i> ¿No estás seguro de qué plan elegir? <a href="#contact">Contáctanos</a> para una consulta gratuita y te ayudaremos a elegir el mejor plan para ti.</p>
             </div>
         </div>
     </section>
 
     <section id="contact" class="contact-section">
         <div class="contact-container">
-            <h2>Contáctame</h2>
-            <p>¿Tienes dudas o quieres más información? Llena el formulario y me pondré en contacto contigo lo antes posible.</p>
-            <form class="contact-form">
-                <div class="form-group">
-                    <label for="name">Nombre</label>
-                    <input type="text" id="name" name="name" required>
+            <div class="section-header animate-fade-up">
+                <h2 class="section-title">CONTÁCTAME</h2>
+                <p class="section-subtitle">¿Tienes dudas o quieres más información? Estoy aquí para ayudarte</p>
+            </div>
+
+            <div class="contact-wrapper">
+                <div class="contact-info animate-slide-right">
+                    <div class="contact-card">
+                        <i class="fas fa-headset"></i>
+                        <h3>Soporte Personalizado</h3>
+                        <p>Respuesta garantizada en menos de 24 horas</p>
+                    </div>
+
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@davistrainer.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h4>Teléfono</h4>
+                                <p>+34 123 456 789</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <h4>WhatsApp</h4>
+                                <p>+34 123 456 789</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-proof">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>4.9/5</span>
+                        </div>
+                        <p>Basado en más de 500 opiniones</p>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="email">Correo Electrónico</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Mensaje</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn-submit">Enviar Mensaje</button>
-            </form>
+
+                <form class="contact-form animate-slide-left">
+                    <div class="form-header">
+                        <h3>Solicita Información</h3>
+                        <p>Completa el formulario y me pondré en contacto contigo lo antes posible</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Nombre Completo</label>
+                        <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Teléfono (opcional)</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+34 XXX XXX XXX">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="interest">¿Qué te interesa?</label>
+                        <select id="interest" name="interest" required>
+                            <option value="" disabled selected>Selecciona una opción</option>
+                            <option value="perdida-peso">Pérdida de peso</option>
+                            <option value="ganancia-muscular">Ganancia muscular</option>
+                            <option value="rendimiento">Mejora de rendimiento</option>
+                            <option value="salud">Salud general</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Cuéntame sobre tus objetivos..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit pulse">ENVIAR MENSAJE <i class="fas fa-paper-plane"></i></button>
+
+                    <div class="form-privacy">
+                        <p>Al enviar este formulario, aceptas nuestra <a href="#">política de privacidad</a>.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-banner">
+        <div class="cta-container animate-zoom-in">
+            <h2>¿LISTO PARA TRANSFORMAR TU CUERPO?</h2>
+            <p>No esperes más para comenzar tu viaje hacia la mejor versión de ti mismo</p>
+            <a href="#plans" class="hero-button pulse">COMENZAR AHORA <i class="fas fa-arrow-right"></i></a>
         </div>
     </section>
 
     <footer>
         <div class="footer-container">
-            <div class="footer-content">
-                <h2>DavisTrainer</h2>
-                <nav class="footer-links">
-                    <a href="#plans">Planes</a>
-                    <a href="#contact">Contacto</a>
-                    <a href="auth/login.html">Iniciar Sesión</a>
-                </nav>
-            </div>
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h2><i class="fas fa-bolt"></i> DavisTrainer</h2>
+                    <p>Transformando vidas a través del entrenamiento personalizado y la nutrición científica.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.tiktok.com" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
 
-            <div class="footer-social">
-                <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.github.com" target="_blank"><i class="fab fa-github"></i></a>
+                <div class="footer-links-container">
+                    <div class="footer-links-column">
+                        <h3>Servicios</h3>
+                        <nav class="footer-links">
+                            <a href="#plans">Planes de Entrenamiento</a>
+                            <a href="#plans">Asesoría Nutricional</a>
+                            <a href="#plans">Coaching Online</a>
+                            <a href="#plans">Suplementación</a>
+                        </nav>
+                    </div>
+
+                    <div class="footer-links-column">
+                        <h3>Empresa</h3>
+                        <nav class="footer-links">
+                            <a href="#results">Resultados</a>
+                            <a href="#contact">Contacto</a>
+                            <a href="#">Sobre Mí</a>
+                            <a href="#">Blog</a>
+                        </nav>
+                    </div>
+
+                    <div class="footer-links-column">
+                        <h3>Legal</h3>
+                        <nav class="footer-links">
+                            <a href="#">Términos y Condiciones</a>
+                            <a href="#">Política de Privacidad</a>
+                            <a href="#">Política de Cookies</a>
+                            <a href="#">Aviso Legal</a>
+                        </nav>
+                    </div>
+                </div>
             </div>
 
             <div class="footer-bottom">
                 <p>&copy; 2025 DavisTrainer. Todos los derechos reservados.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fab fa-cc-apple-pay"></i>
+                </div>
             </div>
         </div>
     </footer>
 
-    <script src="./script.js" ></script>
+    <script src="./script.js"></script>
 </body>
 </html>
