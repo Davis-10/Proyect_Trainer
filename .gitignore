@@ -1,8 +1,38 @@
-.DS_Store
+# Dependencies
 node_modules/
-.vscode/
-.idea/
+
+# Next.js
+.next/
+out/
+
+# Production
+build/
+dist/
+
+# Debug
 *.log
+npm-debug.log*
+
+# Local env files
 .env
 .env.local
-.env.*.local 
+.env.*.local
+
+# Vercel
+.vercel
+
+# Python (legacy - can be removed)
+__pycache__/
+*.pyc
+venv/
+.venv/
+*.db
+backend/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
