@@ -5,7 +5,7 @@ import { createClient } from '@/lib/supabase/client'
 import { Card, CardContent } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
-import { Search, Filter, Dumbbell } from 'lucide-react'
+import { Search, Dumbbell } from 'lucide-react'
 
 interface Exercise {
   id: string

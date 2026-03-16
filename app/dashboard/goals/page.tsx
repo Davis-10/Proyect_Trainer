@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { useToast } from '@/hooks/use-toast'
-import { Plus, Target, Check, Trash2, Edit2 } from 'lucide-react'
+import { Plus, Target, Check, Trash2 } from 'lucide-react'
 
 interface FitnessGoal {
   id: string
@@ -20,6 +20,7 @@ interface FitnessGoal {
   target_date: string | null
   status: string
   created_at: string
+  completed_at: string | null
 }
 
 const goalTypes = [
